@@ -33,17 +33,42 @@
 
             .right {
                 width: 400px;
-                height: 530px;
-                background-size: cover;
+                height: 450px;
+                background-size: contain;
                 background-position: center;
+                background-repeat: no-repeat;
             }
         }
     }
 
     @media screen and (max-width: 1080px) {
         .element {
-            flex-direction: column !important;
+            flex-direction: column-reverse !important;
             margin-top: 10px;
+
+            .p1 {
+                text-align: center;
+            }
+
+            .p2 {
+                text-align: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .right {
+            width: 360px !important;
+            height: 360px !important;
+        }
+
+        .p1 {
+            font-size: 36px !important;
+        }
+
+        .p2 {
+            text-align: center;
+            font-size: 17px !important;
         }
     }
 }
