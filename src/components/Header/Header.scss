@@ -1,0 +1,53 @@
+.wrapper {
+    height: 70px;
+    position: sticky;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: dinroundpro_bold;
+
+        .logo {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #58cc02;
+            font-size: 32px;
+            line-height: 0px;
+            user-select: none;
+            cursor: pointer;
+
+            .img {
+                width: 40px;
+                height: 40px;
+                background-size: cover;
+            };
+        };
+
+        .lang_choice {
+            line-height: 17px;
+            color: rgb(175, 175, 175);
+            letter-spacing: 1px;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                color: rgb(202, 202, 202);
+            };
+        };
+    };
+
+    @media screen and (max-width: 1080px) {
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .lang_choice {
+                display: none;
+            };
+        };
+    };
+}
