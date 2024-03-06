@@ -1,8 +1,11 @@
 .wrapper {
+    display: flex;
+    justify-content: center;
     height: 70px;
     position: sticky;
 
     .container {
+        width: 988px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -26,7 +29,7 @@
             };
         };
 
-        .lang_choice {
+        .langChoice {
             line-height: 17px;
             color: rgb(175, 175, 175);
             letter-spacing: 1px;
@@ -45,7 +48,7 @@
             display: flex;
             justify-content: center;
 
-            .lang_choice {
+            .langChoice {
                 display: none;
             };
         };

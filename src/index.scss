@@ -7,17 +7,6 @@
     right: 0;
 };
 
-.wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .container {
-        width: 1024px;
-        height: 100%;
-    };
-};
-
 @font-face {
     font-family: dinroundpro_bold;
     src: url('/assets/fonts/din-round/dinroundpro_bold.otf');

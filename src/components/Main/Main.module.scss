@@ -1,0 +1,20 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 160px 0;
+
+    .container {
+        width: 988px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            width: 424px;
+            height: 424px;
+            background-size: cover;
+        }
+
+    }
+}

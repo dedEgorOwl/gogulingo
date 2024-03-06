@@ -2,7 +2,7 @@ if you are interested in source code you can check it here:
 https://github.com/dedEgorOwl/gogulingo
 
 
-logins and passwords to access web apps functionality:
+logins and passwords to access web app functionality:
 
     admin(teacher):
         login: teacher1
