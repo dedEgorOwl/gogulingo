@@ -1,0 +1,49 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 988px;
+        display: flex;
+        flex-direction: column;
+
+        .element {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+
+            .left {
+                width: 503px;
+
+                .p1 {
+                    color: #58cc02;
+                    font-family: dinroundpro_bold;
+                    font-size: 48px;
+                }
+    
+                .p2 {
+                    margin-top: 20px;
+                    color: rgb(119, 119, 119);
+                    font-family: dinroundpro_light;
+                    font-size: 18px;
+                }
+            }
+
+            .right {
+                width: 400px;
+                height: 530px;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        .element {
+            flex-direction: column !important;
+            margin-top: 10px;
+        }
+    }
+}

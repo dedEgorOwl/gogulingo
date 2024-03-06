@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import { useState } from 'react';
 
-function Header({languages}) {
+function Header({languages, scroll}) {
 
     const [currentLanguage, setCurrentLanguage] = useState(0);
 
@@ -10,7 +10,7 @@ function Header({languages}) {
     };
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} style={{borderBottom: scroll > 0 ? "solid 1px #ccc" : "solid 1px transparent",}}>
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <div className={styles.img} style={{backgroundImage: "url(/assets/logo-green.svg)"}}></div>
