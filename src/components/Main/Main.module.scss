@@ -16,5 +16,87 @@
             background-size: cover;
         }
 
+        .right {
+            width: 424px;
+            height: 424px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: dinroundpro_bold;
+
+            p {
+                color: rgb(75, 75, 75);
+                font-size: 32px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .startBtn {
+                width: 330px;
+                height: 46px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 1px;
+                background-color: #58CC02;
+                border-color: #5aa801;
+                font-size: 18px;
+                color: white;
+                border-radius: 10px;
+                border-bottom: #5aa801 4px solid;
+                cursor: pointer;
+                margin-bottom: 10px;
+                user-select: none;
+
+                &:hover {
+                    background-color: #61E002;
+                    border-color: #61B800;
+                }
+
+                &:active {
+                    border-bottom-width: 2px;
+                    margin-top: 2px;
+                }
+            }
+
+            .alreadyRegisteredBtn {
+                width: 330px;
+                height: 46px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 1px;
+                font-size: 18px;
+                color: #199EDD;
+                border-radius: 10px;
+                border: lightgray 2px solid;
+                border-bottom-width: 4px;
+                cursor: pointer;
+                user-select: none;
+
+                &:hover {
+                    background-color: lightgray;
+                    border-color: rgb(184, 182, 182);
+                }
+
+                &:active {
+                    border-bottom-width: 2px;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        margin: 40px 0;
+
+        .container {
+            flex-direction: column;
+
+            .right {
+                height: fit-content;
+            }
+        }
     }
 }
