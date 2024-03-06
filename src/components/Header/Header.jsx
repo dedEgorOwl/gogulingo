@@ -1,13 +1,8 @@
 import styles from './Header.module.scss';
 import { useState } from 'react';
 
-function Header({languages, scroll}) {
+function Header({scroll, langPackage, onLangChange, currentLanguage}) {
 
-    const [currentLanguage, setCurrentLanguage] = useState(0);
-
-    const onLangChange = () => {
-        currentLanguage == 0 ? setCurrentLanguage(1) : setCurrentLanguage(0);
-    };
 
     return (
         <div className={styles.wrapper} style={{borderBottom: scroll > 0 ? "solid 1px #ccc" : "solid 1px transparent",}}>
@@ -17,7 +12,7 @@ function Header({languages, scroll}) {
                     <div>gogulingo</div>
                 </div>
                 <div className={styles.langChoice} onClick={onLangChange}>
-                    ЯЗЫК САЙТА: {languages[currentLanguage]}
+                    {langPackage[0][currentLanguage]} {langPackage[1][currentLanguage]}
                 </div>
             </div>
         </div>
