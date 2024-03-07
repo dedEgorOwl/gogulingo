@@ -11,3 +11,4 @@ logins and passwords to access web app functionality:
     user(student):
         login: student1
         password: studentpass
+
