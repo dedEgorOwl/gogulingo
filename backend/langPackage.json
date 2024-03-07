@@ -13,5 +13,12 @@
         [["Научный подход", "Уникальный метод обучения и увлекательные материалы: исследования показывают, что наши курсы эффективно развивают навыки чтения, письма, понимания на слух и устной речи!"], ["backed by science", "We use a combination of research-backed teaching methods and delightful content to create courses that effectively teach reading, writing, listening, and speaking skills!"]],
         [["Стимул к учёбе", "Игровой подход с забавными заданиями и напоминаниями от нашего талисмана — совёнка goga помогает быстро превратить ежедневные занятия в привычку."], ["stay motivated", "We make it easy to form a habit of language learning with game-like features, fun challenges, and reminders from our friendly mascot, goga the owl."]],
         [["Индивидуальное обучение", "Наши уроки объединяют в себе умные алгоритмы искусственного интеллекта и новейшие достижения лингвистики. Сложность и темп обучения подбираются для каждого пользователя индивидуально!"], ["personalized learning", "Combining the best of AI and language science, lessons are tailored to help you learn at just the right level and pace."]]
+    ],
+    "footer": [
+        [["О нас", ["Курсы", "Миссия", "Методология", "Эффективность", "Команда", "Исследования", "Вакансии", "Рукводство", "Магазин", "СМИ", "Инвесторы", "Связь с нами"]], ["About us", ["Courses", "Mission", "Approach", "Efficacy", "Team", "Research", "Careers", "Brand guidelines", "Store", "Press", "Investors", "Contact us"]]],
+        [["Продукты", ["gogulingo", "gogulingo for Schools", "gogulingo English Test", "Подкаст", "gogulingo for Business", "Super gogulingo"]], ["Products", ["gogulingo", "gogulingo for Schools", "gogulingo English Test", "gogulingo ABC", "gogulingo Math", "Podcast"]]],
+        [["Приложение", ["gogulingo для Android", "gogulingo для iOS"]], ["Apps", ["gogulingo for Android", "gogulingo for iOS"]]],
+        [["Помощь и поддержка", ["Справочный центр", "Duolingo for Schools", "Duolingo English Test", "Статус"]], ["Help and support", ["Duolingo FAQs", "Schools FAQs", "Duolingo English Test", "Status"]]],
+        [["Условия и конф.", ["Правила сообщества", "Условия", "Конфиденциальность"]], ["Privacy and terms", ["Community guidelines", "Terms", "Privacy"]]]
     ]
 }

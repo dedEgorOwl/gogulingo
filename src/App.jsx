@@ -7,6 +7,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -32,12 +33,13 @@ function App() {
     return (
         <div>
             {
-                (langPackages === null) ?
+                (langPackages === undefined) ?
                 <>page is still loading...</> :
                 <>
                     <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} />
                     <Main langPackage={langPackages.main} currentLanguage={currentLanguage} />
                     <About langPackage={langPackages.about} currentLanguage={currentLanguage} />
+                    <Footer langPackage={langPackages.footer} currentLanguage={currentLanguage} />
                 </>
             }
         </div>

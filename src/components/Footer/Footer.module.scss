@@ -1,0 +1,46 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #58CC02;
+
+    .container {
+        width: 988px;
+        display: grid;
+        justify-content: space-between;
+        padding: 40px 0;
+        grid-template-columns: auto auto auto auto auto;
+
+        .element {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-family: dinroundpro_medium;
+            
+            .heading {
+                color: rgb(215, 255, 184);
+                font-size: 19px;
+                line-height: 27px;
+            }
+
+            .item {
+                color: rgb(165, 237, 110);
+                font-size: 14px;
+                line-height: 22px;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            grid-template-columns: auto auto auto;
+            width: 700px;
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: auto;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}
