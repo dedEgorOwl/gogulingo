@@ -1,13 +1,13 @@
 import styles from './Header.module.scss';
 import { useState } from 'react';
 
-function Header({scroll, langPackage, onLangChange, currentLanguage}) {
+function Header({scroll, langPackage, onLangChange, currentLanguage, onLogoClick}) {
 
 
     return (
         <div className={styles.wrapper} style={{borderBottom: scroll > 0 ? "solid 1px #ccc" : "solid 1px transparent",}}>
             <div className={styles.container}>
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={() => {onLogoClick('index')}}>
                     <div className={styles.img} style={{backgroundImage: "url(/assets/logo-green.svg)"}}></div>
                     <div>gogulingo</div>
                 </div>

@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer';
 
 function App() {
     const [scrollTop, setScrollTop] = useState(0);
+    const [currentPage, setCurrentPage] = useState('index');
     const [currentLanguage, setCurrentLanguage] = useState(0);
 
     const onLangChange = () => {
@@ -35,12 +36,18 @@ function App() {
             {
                 (langPackages === undefined) ?
                 <>page is still loading...</> :
-                <>
-                    <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} />
-                    <Main langPackage={langPackages.main} currentLanguage={currentLanguage} />
-                    <About langPackage={langPackages.about} currentLanguage={currentLanguage} />
-                    <Footer langPackage={langPackages.footer} currentLanguage={currentLanguage} />
-                </>
+                (currentPage === 'index') ?
+                    <>
+                        <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} onLogoClick={setCurrentPage} />
+                        <Main langPackage={langPackages.main} currentLanguage={currentLanguage} />
+                        <About langPackage={langPackages.about} currentLanguage={currentLanguage} />
+                        <Footer langPackage={langPackages.footer} currentLanguage={currentLanguage} />
+                    </> :
+                (currentPage === 'register') ?
+                    <>
+                        <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} onLogoClick={setCurrentPage} />
+                    </> :
+                (currentPage === 'login')
             }
         </div>
     )
