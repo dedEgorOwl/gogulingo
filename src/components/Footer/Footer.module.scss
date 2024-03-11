@@ -5,7 +5,7 @@
     background-color: #58CC02;
 
     .container {
-        width: 988px;
+        width: calc(988px);
         display: grid;
         justify-content: space-between;
         padding: 40px 0;
@@ -41,6 +41,10 @@
             grid-template-columns: auto;
             justify-content: center;
             gap: 20px;
+        }
+
+        @media screen and (max-width: 460px) {
+            width: 200px;
         }
     }
 }

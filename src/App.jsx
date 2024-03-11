@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 
 import langPackages from '../backend/langPackage.json';
 
-import './App.scss';
+import styles from './App.module.scss';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
+import Login from './components/Login/Login';
 
 
 
@@ -32,7 +33,7 @@ function App() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.base}>
             {
                 (langPackages === undefined) ?
                 <>page is still loading...</> :
@@ -46,6 +47,7 @@ function App() {
                 (currentPage === 'register') ?
                     <>
                         <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} onLogoClick={setCurrentPage} />
+                        <Login langPackage={langPackages.main} currentLanguage={currentLanguage} />
                     </> :
                 (currentPage === 'login')
             }

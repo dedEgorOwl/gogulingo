@@ -99,4 +99,30 @@
             }
         }
     }
+
+    @media screen and (max-width: 768px) {
+        
+        .container {
+
+            .left {
+                width: 312px;
+                height: 312px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+
+        .container {
+            
+
+            .right {
+                width: fit-content;
+
+                p {
+                    width: 300px;
+                }
+            }
+        }
+    }
 }
