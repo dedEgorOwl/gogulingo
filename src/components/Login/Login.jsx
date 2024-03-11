@@ -25,7 +25,7 @@ function Login({langPackage, currentLanguage, setisLoginActive, setCurrentLoginT
                             <input type="password" placeholder={langPackage[4][currentLanguage]} />
                         </> :
                         <>
-                            <input type="text" placeholder={langPackage[6][currentLanguage]} />
+                            <input type="number" placeholder={langPackage[6][currentLanguage]} />
                             <input type="password" placeholder={langPackage[7][currentLanguage]} />
                             <input type="text" placeholder={langPackage[8][currentLanguage]} />
                             <input type="password" placeholder={langPackage[4][currentLanguage]} />
