@@ -20,5 +20,16 @@
         [["Приложение", ["gogulingo для Android", "gogulingo для iOS"]], ["Apps", ["gogulingo for Android", "gogulingo for iOS"]]],
         [["Помощь и поддержка", ["Справочный центр", "Duolingo for Schools", "Duolingo English Test", "Статус"]], ["Help and support", ["Duolingo FAQs", "Schools FAQs", "Duolingo English Test", "Status"]]],
         [["Условия и конф.", ["Правила сообщества", "Условия", "Конфиденциальность"]], ["Privacy and terms", ["Community guidelines", "Terms", "Privacy"]]]
+    ],
+    "login": [
+        [["ВОЙТИ", "LOGIN"], ["РЕГИСТРАЦИЯ", "SIGN UP"]],
+        [["Вход", "Login"], ["Регистрация", "Sign up"]],
+        [["ВХОД", "LOGIN"], ["СОЗДАТЬ АККАУНТ", "CREATE ACCOUNT"]],
+        ["Имя пользователя", "Username"],
+        ["Пароль", "Password"],
+        ["ИЛИ", "OR"],
+        ["Возраст", "Age"],
+        ["Имя", "Name"],
+        ["Электронная почта", "Email"]
     ]
 }
