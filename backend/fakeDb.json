@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "name": "Egor",
+            "role": "student",
+            "login": "student1",
+            "password": "studentpass"
+        },
+        {
+            "id": 1,
+            "name": "Maria",
+            "role": "teacher",
+            "login": "teacher1",
+            "password": "teacherpass"
+        }
+    ]
+}

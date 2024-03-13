@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import fakeDb from '../backend/fakeDb.json';
 import langPackages from '../backend/langPackage.json';
 
 import styles from './App.module.scss';
@@ -20,10 +21,25 @@ function App() {
     const [currentPage, setCurrentPage] = useState('index');
     const [currentLanguage, setCurrentLanguage] = useState(0);
     const [isLoginActive, setisLoginActive] = useState(false);
-    const [currentLoginType, setCurrentLoginType] = useState('');
+    const [currentLoginType, setCurrentLoginType] = useState(undefined);
+    const [loggedUser, setLoggedUser] = useState(null);
+    const [isNotificationActive, setIsNotificationActive] = useState(false);
+
+    const handleLogin = (login, pass, btnType) => {
+        if (btnType === false) {
+            fakeDb.users.map(user => {
+                if (user.login === login && user.password === pass) {
+                    setLoggedUser(user.role);
+                    setisLoginActive(false);
+                };
+            });
+        } else {
+            setIsNotificationActive(true);
+        };
+    };
 
     const onLangChange = () => {
-        currentLanguage == 0 ? setCurrentLanguage(1) : setCurrentLanguage(0);
+        setCurrentLanguage(Number(!currentLanguage));
     };
 
     useEffect(() => {
@@ -41,7 +57,7 @@ function App() {
         <div className={styles.base} style={(isLoginActive) ? whenModal : {}}>
             {
                 (isLoginActive) ?
-                    <Login langPackage={langPackages.login} currentLanguage={currentLanguage} setisLoginActive={setisLoginActive} currentLoginType={currentLoginType} setCurrentLoginType={setCurrentLoginType} /> :
+                    <Login langPackage={langPackages.login} currentLanguage={currentLanguage} setisLoginActive={setisLoginActive} currentLoginType={currentLoginType} setCurrentLoginType={setCurrentLoginType} handleLogin={handleLogin} isNotificationActive={isNotificationActive} setIsNotificationActive={setIsNotificationActive} /> :
                 ('')
             }
             {
