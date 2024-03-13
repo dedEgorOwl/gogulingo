@@ -24,16 +24,26 @@ function App() {
     const [currentLoginType, setCurrentLoginType] = useState(undefined);
     const [loggedUser, setLoggedUser] = useState(null);
     const [isNotificationActive, setIsNotificationActive] = useState(false);
+    const [notificationText, setNotificationText] = useState([]);
+
+    
+
 
     const handleLogin = (login, pass, btnType) => {
         if (btnType === false) {
             fakeDb.users.map(user => {
                 if (user.login === login && user.password === pass) {
+                    setIsNotificationActive(false);
                     setLoggedUser(user.role);
                     setisLoginActive(false);
+                    setCurrentPage('tasks');
+                } else {
+                    setNotificationText(["Неправильный логин или пароль", "Incorrect login or password"]);
+                    setIsNotificationActive(true);
                 };
             });
         } else {
+            setNotificationText(["Создание аккаунта недоступно", "Account creation isn't avaliable"]);
             setIsNotificationActive(true);
         };
     };
@@ -41,6 +51,9 @@ function App() {
     const onLangChange = () => {
         setCurrentLanguage(Number(!currentLanguage));
     };
+
+
+
 
     useEffect(() => {
         const handleScroll = event => {
@@ -53,11 +66,14 @@ function App() {
         };
     }, []);
 
+
+
+
     return (
         <div className={styles.base} style={(isLoginActive) ? whenModal : {}}>
             {
                 (isLoginActive) ?
-                    <Login langPackage={langPackages.login} currentLanguage={currentLanguage} setisLoginActive={setisLoginActive} currentLoginType={currentLoginType} setCurrentLoginType={setCurrentLoginType} handleLogin={handleLogin} isNotificationActive={isNotificationActive} setIsNotificationActive={setIsNotificationActive} /> :
+                    <Login langPackage={langPackages.login} currentLanguage={currentLanguage} setisLoginActive={setisLoginActive} currentLoginType={currentLoginType} setCurrentLoginType={setCurrentLoginType} handleLogin={handleLogin} isNotificationActive={isNotificationActive} setIsNotificationActive={setIsNotificationActive} notificationText={notificationText} /> :
                 ('')
             }
             {
@@ -75,7 +91,11 @@ function App() {
                         <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} onLogoClick={setCurrentPage} />
                         
                     </> :
-                (currentPage === '')
+                (currentPage === 'tasks') ?
+                    <>
+
+                    </> :
+                ('')
             }
         </div>
     )

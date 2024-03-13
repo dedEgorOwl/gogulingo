@@ -3,17 +3,9 @@ import { useState } from 'react';
 import styles from './Login.module.scss';
 
 
-function Login({langPackage, currentLanguage, setisLoginActive, setCurrentLoginType, currentLoginType, handleLogin, isNotificationActive, setIsNotificationActive}) {
+function Login({langPackage, currentLanguage, setisLoginActive, setCurrentLoginType, currentLoginType, handleLogin, isNotificationActive, setIsNotificationActive, notificationText}) {
     const [loginFormLg, setLoginFormLg] = useState('');
     const [loginFormPw, setLoginFormPw] = useState('');
-    
-    const handleBtnClick = (btnType) => {
-        (btnType === 'login') ? {
-            
-        } : {
-
-        }
-    };
 
     return (
         <div className={styles.wrapper}>
@@ -21,14 +13,14 @@ function Login({langPackage, currentLanguage, setisLoginActive, setCurrentLoginT
                 (isNotificationActive) ?
                     <div className={styles.notification} onClick={() => {setIsNotificationActive(false)}} >
                         <div className={styles.canc} style={{backgroundImage: `url('/assets/cancel.svg')`}} ></div>
-                        <p>{langPackage[9][currentLanguage]}</p>
+                        <p>{notificationText[currentLanguage]}</p>
                     </div> :
                 ('')
 
             }
 
             <div className={styles.header}>
-                <div className={styles.closeModal} style={{backgroundImage: `url('/assets/close.svg')`}} onClick={() => {setisLoginActive(false)}}></div>
+                <div className={styles.closeModal} style={{backgroundImage: `url('/assets/close.svg')`}} onClick={() => {setisLoginActive(false); setIsNotificationActive(false)}}></div>
                 <div className={styles.changeType} onClick={() => { 
                     setCurrentLoginType(!currentLoginType);
                 }}>{langPackage[0][Number(!currentLoginType)][currentLanguage]}</div>
