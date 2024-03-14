@@ -14,5 +14,31 @@
             "login": "teacher1",
             "password": "teacherpass"
         }
+    ],
+    "tasks": [
+        {
+            "id": 0,
+            "type": "listening",
+            "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
+            "answers": [["Меня зовут Макс", "My name is Maks"]],
+            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
+            "catchfraze": ["", ""]
+        },
+        {
+            "id": 0,
+            "type": "listening",
+            "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
+            "answers": [["Меня зовут Макс", "My name is Maks"]],
+            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
+            "catchfraze": ["", ""]
+        },
+        {
+            "id": 0,
+            "type": "listening",
+            "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
+            "answers": [["Меня зовут Макс", "My name is Maks"]],
+            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
+            "catchfraze": ["", ""]
+        }
     ]
 }

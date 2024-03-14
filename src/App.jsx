@@ -10,6 +10,11 @@ import Main from './components/Main/Main';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
+import Tasks from './components/Tasks/Tasks';
+
+import max_voice_rus from '/assets/max_voice_rus.mp3';
+import max_voice_eng from '/assets/max_voice_eng.mp3';
+
 
 const whenModal = {
     height: '100vh',
@@ -28,6 +33,27 @@ function App() {
 
     
 
+    const playAudio = (taskId) => {
+        let currentAudio = null;
+        switch(taskId) {
+            case 0:
+                if (currentLanguage === 0) {
+                    currentAudio = new Audio(max_voice_rus);
+                    currentAudio.volume = 0.2;
+                    currentAudio.play();
+                }
+                if (currentLanguage === 1) {
+                    console.log(11)
+                    currentAudio = new Audio(max_voice_eng);
+                    currentAudio.volume = 0.2;
+                    currentAudio.play();
+                }
+                break;
+            case 1:
+                
+                break;
+        }
+    };
 
     const handleLogin = (login, pass, btnType) => {
         if (btnType === false) {
@@ -93,7 +119,7 @@ function App() {
                     </> :
                 (currentPage === 'tasks') ?
                     <>
-
+                        <Tasks langPackage={langPackages.tasks} fakeDb={fakeDb} playAudio={playAudio} currentLanguage={currentLanguage} setCurrentPage={setCurrentPage} />
                     </> :
                 ('')
             }
