@@ -10,13 +10,13 @@ function Main({langPackage, currentLanguage, setisLoginActive, setCurrentLoginTy
                 <div className={styles.right}>
                     <p>{langPackage[0][currentLanguage]}</p>
                     <div className={styles.startBtn} onClick={() => {
-                        setCurrentLoginType(false);
+                        setCurrentLoginType(true);
                         setisLoginActive(true);
                         }}>
                         {langPackage[1][currentLanguage]}
                     </div>
                     <div className={styles.alreadyRegisteredBtn} onClick={() => {
-                        setCurrentLoginType(true);
+                        setCurrentLoginType(false);
                         setisLoginActive(true);
                         }}>
                         {langPackage[2][currentLanguage]}
