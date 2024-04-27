@@ -20,20 +20,20 @@
             "id": 0,
             "type": "listening",
             "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
+            "answers": [["My name is Maks", "Меня зовут Макс"]],
+            "path_to_file": ["/assets/max_voice_eng.mp3", "/assets/max_voice_rus.mp3"],
+            "catchfraze": ["", ""]
+        },
+        {
+            "id": 1,
+            "type": "image",
+            "title": ["Выберете из списка ", "Listen and write down what you hear"],
             "answers": [["Меня зовут Макс", "My name is Maks"]],
             "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
             "catchfraze": ["", ""]
         },
         {
-            "id": 0,
-            "type": "listening",
-            "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
-            "answers": [["Меня зовут Макс", "My name is Maks"]],
-            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
-            "catchfraze": ["", ""]
-        },
-        {
-            "id": 0,
+            "id": 2,
             "type": "listening",
             "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
             "answers": [["Меня зовут Макс", "My name is Maks"]],

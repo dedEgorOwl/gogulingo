@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #131F24;
+    background-color: white;
 
     .container {
         width: 988px;
@@ -38,7 +38,7 @@
                     width: 100%;
                     height: 15px;
                     border-radius: 100px;
-                    background-color: #37464F;
+                    background-color: #E5E5E5;
     
                     .progress {
                         width: 100%;
@@ -54,14 +54,14 @@
                 display: grid; 
                 grid-template-columns: 1fr 1fr; 
                 grid-template-rows: 0.3fr 1fr 1fr;
-                gap: 0px 0px; 
+                gap: 20px 0px; 
                 grid-template-areas: 
                     "title title"
                     "img btn"
                     "input input"; 
 
                 .title {
-                    color: white;
+                    color: #3C3C3C;
                     font-family: dinroundpro_bold;
                     font-size: 32px;
                     grid-area: title;
@@ -78,22 +78,27 @@
                 .btn {
                     grid-area: btn;
                     font-family: dinroundpro_medium;
-                    color: white;
+                    color: #3C3C3C;
                     cursor: pointer;
                     align-self: center;
                     font-size: 24px;
                     padding: 10px 20px;
-                    border: 2px solid #37464F;
+                    border: 2px solid #AFAFB4;
                     border-bottom-width: 4px;
                     border-radius: 10px;
                     width: fit-content;
                     user-select: none;
 
                     &:active {
-                        background-color: #202F36;
-                        border-color: #199EDD;
+                        background-color: #DDF4FF;
+                        border-color: #84D8FF;
                         border-bottom-width: 2px;
                         margin-top: 2px;
+                        color: #199EDD;
+                    }
+
+                    &:hover {
+                        background-color: #E5E5E5;
                     }
                 }
 
@@ -104,7 +109,7 @@
                     height: 40px;
                     background-color: transparent;
                     border-bottom: 2px solid #37464F;
-                    color: white;
+                    color: #3C3C3C;
                     font-size: 18px;
                     
                     &:active {
@@ -115,14 +120,33 @@
         }
 
         .confirm {
-            color: white;
-            width: fit-content;
-            padding: 15px 20px;
-            cursor: pointer;
-            background-color: #37464F;
-            color: #52656D;
+            background-color: #E5E5E5;
+            border-bottom: 4px solid #61B800;
+            user-select: none;
+            color: #AFAFB4;
+            letter-spacing: 1px;
             font-family: dinroundpro_medium;
-            border-radius: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            padding: 10px;
+            border-color: transparent;
+        }
+
+        .confirmActive {
+            cursor: pointer;
+            background-color: #58CC02;
+            border-bottom: 4px solid #61B800;
+            color: white;
+
+            &:active {
+                border-bottom-width: 2px;
+                margin-top: 2px;
+            }
+
+            &:hover {
+                background-color: #61E002;
+            }
         }
     }
 }
