@@ -11,6 +11,16 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
     const [isModaltskActive, setIsModaltskActive] = useState(false);
     const [lastAnswerCorrectness, setLastAnswerCorrectness] = useState(false);
     const [current_Question, setCurrentQuestion] = useState(0);
+    const [currentOrder, setCurrentOrder] = useState([]);
+
+    function shuffle(array) {
+        let currentIndex = array.length;
+        while (currentIndex != 0) {
+          let randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+          [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+    };
 
     const handleTaskType = (currentQuestion) => {
         switch(currentQuestion.type) {
@@ -46,12 +56,28 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
                     </div>
                 )
             case 'puttogether':
+                const answerz = currentQuestion.answers[0][currentLanguage].split(' ');
+                shuffle(answerz);
+
                 return (
                     <div className={styles.task} key={currentQuestion.id} style={{display: 'flex', flexDirection: 'column', }}>
                         <div className={styles.title}>{currentQuestion.title[currentLanguage]}</div>
-                        <div className={styles.row}>
+                        <div className={styles.row} style={{flexDirection: 'column', alignItems: 'flex-start'}}>
                             <div className={styles.top}>
-                                {handlePutTogether(currentQuestion)}
+                                {answerz.map((item, index) => {
+                                    return <div className={styles.wordBox} key={index} onClick={() => {
+                                        currentOrder.push(item);
+                                        console.log(currentOrder);
+                                    }}>{item}</div>
+                                })}
+                            </div>
+                            <div className={styles.bottom}>
+                                <div className={styles.left}>
+                                    {currentOrder.map((item, index) => {
+                                        return <div className={styles.wordBox} key={index}>{item}</div>
+                                    })}
+                                </div>
+                                <div className={styles.delete} onClick={() => {setCurrentOrder([])}}>{langPackage[5][currentLanguage]}</div>
                             </div>
                         </div>
                     </div>
@@ -59,15 +85,6 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
         };
     };
 
-
-    const handlePutTogether = (crntQst) => {
-        crntQst = crntQst.answers[0][currentLanguage].split(' ');
-
-        crntQst.map((item, index) => {
-            console.log(item)
-            return <>1</>
-        })
-    };
 
     const handleCheck = (currentQuestion) => {
         switch (currentQuestion.type) {

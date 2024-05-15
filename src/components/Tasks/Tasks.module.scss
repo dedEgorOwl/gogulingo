@@ -164,10 +164,63 @@
                     }
 
                     .top {
-                        border: 4px solid black;
+                        display: flex;
+                        gap: 10px;
+                        padding: 20px 0;
 
                         .wordBox {
-                            border: 1px solid black;
+                            border: 2px solid black;
+                            border-bottom-width: 4px;
+                            border-radius: 10px;
+                            padding: 15px 25px;
+                            font-family: dinroundpro_light;
+                            cursor: pointer;
+                            border-color: #84D8FF;
+                            user-select: none;
+
+                            &:active {
+                                border-bottom-width: 2px;
+                                margin-top: 2px;
+                            }
+
+                            &:hover {
+                                background-color: #DDF4FF;
+                            }
+                        }
+
+                        .wordBoxInactive {
+                            border-color: #AFAFB4;
+                        }
+                    }
+
+                    .bottom {
+                        width: 100%;
+                        border-bottom: 2px solid #37464F;
+                        color: #3C3C3C;
+                        font-size: 18px;
+                        margin-top: 80px;
+                        padding-bottom: 10px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .delete {
+                            border: 2px solid red;
+                            width: fit-content;
+                            padding: 15px 25px;
+                            border-bottom-width: 4px;
+                            border-radius: 10px;
+                            font-family: dinroundpro_medium;
+                            user-select: none;
+                            cursor: pointer;
+
+                            &:active {
+                                border-bottom-width: 2px;
+                                margin-top: 2px;
+                            }
+
+                            &:hover {
+                                background-color: rgb(255, 221, 221);
+                            }
                         }
                     }
                 }
