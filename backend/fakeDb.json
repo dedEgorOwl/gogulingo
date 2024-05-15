@@ -21,24 +21,21 @@
             "type": "listening",
             "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
             "answers": [["My name is Maks", "Меня зовут Макс"]],
-            "path_to_file": ["/assets/max_voice_eng.mp3", "/assets/max_voice_rus.mp3"],
-            "catchfraze": ["", ""]
+            "path_to_file": ["/assets/max_voice_eng.mp3", "/assets/max_voice_rus.mp3"]
         },
         {
             "id": 1,
             "type": "image",
-            "title": ["Выберете из списка ", "Listen and write down what you hear"],
-            "answers": [["Меня зовут Макс", "My name is Maks"]],
-            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
-            "catchfraze": ["", ""]
+            "title": ["Выберете слово «Кофе»", "Select word «Coffee»"],
+            "answers": [[1, 1]],
+            "path_to_file": ["/assets/tasks/butter.svg", "/assets/tasks/coffee.svg", "/assets/tasks/tea.svg"],
+            "labels": [["Butter", "Coffee", "Tea"], ["Масло", "Кофе", "Чай"]]
         },
         {
             "id": 2,
-            "type": "listening",
-            "title": ["Прослушайте и впишите услышанное", "Listen and write down what you hear"],
-            "answers": [["Меня зовут Макс", "My name is Maks"]],
-            "path_to_file": ["/assets/max_voice_rus.mp3", "/assets/max_voice_eng.mp3"],
-            "catchfraze": ["", ""]
+            "type": "puttogether",
+            "title": ["Из данных слов составьте предложение", "Make a sentence using these words"],
+            "answers": [["What is the weather today?", "Какая сегодня погода?"]]
         }
     ]
 }

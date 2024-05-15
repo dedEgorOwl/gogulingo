@@ -111,9 +111,64 @@
                     border-bottom: 2px solid #37464F;
                     color: #3C3C3C;
                     font-size: 18px;
-                    
-                    &:active {
-                        
+                }
+
+                .row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .rowItem {
+                        width: 200px;
+                        height: 200px;
+                        font-family: dinroundpro_medium;
+                        padding: 20px;
+                        border: 2px solid #dadada;
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        cursor: pointer;
+                        border-bottom-width: 4px;
+                        color: #4B4B4B;
+                        transition: ease-in 0.2s;
+
+                        .label {
+                            font-size: 24px;
+                        }
+
+                        .imaj {
+                            width: 160px;
+                            height: 160px;
+                            background-position: center;
+                            background-size: 90%;
+                            transition: 0.2s linear;
+                        }
+
+                        &:hover {
+                            background-color: #F7F7F7;
+
+                            .imaj {
+                                background-size: 110%;
+                            }
+                        }
+                    }
+
+                    .rowItemActive {
+                        border-color: #84D8FF;
+                        background-color: #DDF4FF;
+
+                        &:hover {
+                            background-color: #DDF4FF;
+                        }
+                    }
+
+                    .top {
+                        border: 4px solid black;
+
+                        .wordBox {
+                            border: 1px solid black;
+                        }
                     }
                 }
             }

@@ -38,13 +38,13 @@ function App() {
         switch(taskId) {
             case 0:
                 if (currentLanguage === 0) {
-                    currentAudio = new Audio(max_voice_rus);
+                    currentAudio = new Audio(max_voice_eng);
                     currentAudio.volume = 0.2;
                     currentAudio.play();
                 }
                 if (currentLanguage === 1) {
                     console.log(11)
-                    currentAudio = new Audio(max_voice_eng);
+                    currentAudio = new Audio(max_voice_rus);
                     currentAudio.volume = 0.2;
                     currentAudio.play();
                 }
