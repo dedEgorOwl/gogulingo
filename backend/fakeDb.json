@@ -35,7 +35,8 @@
             "id": 2,
             "type": "puttogether",
             "title": ["Из данных слов составьте предложение", "Make a sentence using these words"],
-            "answers": [["What is the weather today?", "Какая сегодня погода?"]]
+            "answers": [["What is the weather today?", "Какая сегодня погода?"]],
+            "shuffled": [["is the today? What weather", "погода? сегодня Какая"]]
         }
     ]
 }

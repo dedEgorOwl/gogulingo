@@ -30,6 +30,7 @@ function App() {
     const [loggedUser, setLoggedUser] = useState(null);
     const [isNotificationActive, setIsNotificationActive] = useState(false);
     const [notificationText, setNotificationText] = useState([]);
+    const [currentOrder, setCurrentOrder] = useState([]);
 
     
 
@@ -119,7 +120,7 @@ function App() {
                     </> :
                 (currentPage === 'tasks') ?
                     <>
-                        <Tasks langPackage={langPackages.tasks} fakeDb={fakeDb} playAudio={playAudio} currentLanguage={currentLanguage} setCurrentPage={setCurrentPage} />
+                        <Tasks langPackage={langPackages.tasks} fakeDb={fakeDb} playAudio={playAudio} currentLanguage={currentLanguage} setCurrentPage={setCurrentPage} currentOrder={currentOrder} setCurrentOrder={setCurrentOrder} />
                     </> :
                 ('')
             }

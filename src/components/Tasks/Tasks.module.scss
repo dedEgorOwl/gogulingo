@@ -190,6 +190,11 @@
 
                         .wordBoxInactive {
                             border-color: #AFAFB4;
+
+                            &:active {
+                                border-bottom-width: 4px;
+                                margin-top: 0px;
+                            }
                         }
                     }
 
@@ -202,6 +207,22 @@
                         padding-bottom: 10px;
                         display: flex;
                         justify-content: space-between;
+
+                        .left {
+                            display: flex;
+                            gap: 10px;
+
+                            .wordBox {
+                                border: 2px solid black;
+                                border-bottom-width: 4px;
+                                border-radius: 10px;
+                                padding: 15px 25px;
+                                font-family: dinroundpro_light;
+                                cursor: pointer;
+                                border-color: #84D8FF;
+                                user-select: none;
+                            }
+                        }
 
                         .delete {
                             border: 2px solid red;

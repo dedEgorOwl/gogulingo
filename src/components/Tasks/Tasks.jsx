@@ -4,14 +4,16 @@ import styles from './Tasks.module.scss';
 
 import Modaltsk from './Adds/Modaltsk';
 
-function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}) {
+function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage, currentOrder, setCurrentOrder}) {
 
     const [currentQuestionInput, setCurrentQuestionInput] = useState('');
     const [isCheckActive, setIsCheckActive] = useState(false);
     const [isModaltskActive, setIsModaltskActive] = useState(false);
     const [lastAnswerCorrectness, setLastAnswerCorrectness] = useState(false);
     const [current_Question, setCurrentQuestion] = useState(0);
-    const [currentOrder, setCurrentOrder] = useState([]);
+    
+    const [reloadMe, setReloadMe] = useState(false);
+    
 
     function shuffle(array) {
         let currentIndex = array.length;
@@ -56,18 +58,26 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
                     </div>
                 )
             case 'puttogether':
-                const answerz = currentQuestion.answers[0][currentLanguage].split(' ');
-                shuffle(answerz);
+                const answerz = currentQuestion.shuffled[0][currentLanguage].split(' ');
 
                 return (
                     <div className={styles.task} key={currentQuestion.id} style={{display: 'flex', flexDirection: 'column', }}>
                         <div className={styles.title}>{currentQuestion.title[currentLanguage]}</div>
                         <div className={styles.row} style={{flexDirection: 'column', alignItems: 'flex-start'}}>
-                            <div className={styles.top}>
+                            <div className={styles.top} id='top'>
                                 {answerz.map((item, index) => {
-                                    return <div className={styles.wordBox} key={index} onClick={() => {
-                                        currentOrder.push(item);
-                                        console.log(currentOrder);
+                                    return <div className={styles.wordBox} key={index} onClick={(e) => {
+                                        if (e.target.classList.contains(styles.wordBoxInactive)) {
+                                            return;
+                                        } else {
+                                            e.target.classList.add(styles.wordBoxInactive);
+                                            currentOrder.push(item);
+                                            setReloadMe(!reloadMe);
+
+                                            if (currentOrder.length === answerz.length) {
+                                                setIsCheckActive(true);
+                                            };
+                                        };
                                     }}>{item}</div>
                                 })}
                             </div>
@@ -77,7 +87,13 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
                                         return <div className={styles.wordBox} key={index}>{item}</div>
                                     })}
                                 </div>
-                                <div className={styles.delete} onClick={() => {setCurrentOrder([])}}>{langPackage[5][currentLanguage]}</div>
+                                <div className={styles.delete} onClick={(e) => {
+                                    setCurrentOrder([]);
+                                    e.target.parentElement.parentElement.querySelector('#top').querySelectorAll('*').forEach((jtem, jndex) => {
+                                        jtem.classList.remove(styles.wordBoxInactive);
+                                    });
+                                    setIsCheckActive(false);
+                                }}>{langPackage[5][currentLanguage]}</div>
                             </div>
                         </div>
                     </div>
@@ -93,18 +109,29 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage}
                     setLastAnswerCorrectness(true);
                     setCurrentQuestionInput('');
                 };
-                break;
+            break;
             case "image":
                 if (currentQuestion.answers[0][currentLanguage] == currentQuestionInput) {
                     setLastAnswerCorrectness(true);
                     setCurrentQuestionInput('');
                 };
             break;
+            case "puttogether":
+                if (currentOrder.join(' ') === fakeDb.tasks[current_Question].answers[0][currentLanguage]) {
+                    setLastAnswerCorrectness(true);
+                    setCurrentOrder([]);
+                };
+            break;
         
             default:
-                return "no such case O_o";
+                console.error(new Error("no such case O_o"));
         }
-        setIsModaltskActive(true);
+
+        if (fakeDb.tasks.length !== current_Question + 1) {
+            setIsModaltskActive(true);
+        } else {
+            console.log("FINISHED");
+        };
     };
 
     return (
