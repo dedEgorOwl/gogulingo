@@ -20,9 +20,16 @@
             align-items: center;
             color: #58cc02;
             font-size: 32px;
-            line-height: 0px;
             user-select: none;
             cursor: pointer;
+            gap: 10px;
+
+            .gog {
+                height: calc(100% - 10px);
+                display: flex;
+                align-items: center;
+                padding-bottom: 10px;
+            }
 
             .img {
                 width: 40px;

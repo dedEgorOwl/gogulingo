@@ -11,6 +11,7 @@ import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import Tasks from './components/Tasks/Tasks';
+import Finish from './components/Finish/Finish';
 
 import max_voice_rus from '/assets/max_voice_rus.mp3';
 import max_voice_eng from '/assets/max_voice_eng.mp3';
@@ -23,7 +24,7 @@ const whenModal = {
 
 function App() {
     const [scrollTop, setScrollTop] = useState(0);
-    const [currentPage, setCurrentPage] = useState('index');
+    const [currentPage, setCurrentPage] = useState('finish');
     const [currentLanguage, setCurrentLanguage] = useState(0);
     const [isLoginActive, setisLoginActive] = useState(false);
     const [currentLoginType, setCurrentLoginType] = useState(undefined);
@@ -121,6 +122,11 @@ function App() {
                 (currentPage === 'tasks') ?
                     <>
                         <Tasks langPackage={langPackages.tasks} fakeDb={fakeDb} playAudio={playAudio} currentLanguage={currentLanguage} setCurrentPage={setCurrentPage} currentOrder={currentOrder} setCurrentOrder={setCurrentOrder} />
+                    </> :
+                (currentPage === 'finish') ?
+                    <>
+                        <Header scroll={scrollTop} langPackage={langPackages.header} onLangChange={onLangChange} currentLanguage={currentLanguage} onLogoClick={setCurrentPage} isLoginActive={isLoginActive} />
+                        <Finish langPackage={langPackages.finish} fakeDb={fakeDb} currentLanguage={currentLanguage} />
                     </> :
                 ('')
             }

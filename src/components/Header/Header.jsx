@@ -9,7 +9,7 @@ function Header({scroll, langPackage, onLangChange, currentLanguage, onLogoClick
             <div className={styles.container}>
                 <div className={styles.logo} onClick={() => {onLogoClick('index')}}>
                     <div className={styles.img} style={{backgroundImage: "url(/assets/logo-green.svg)"}}></div>
-                    <div>gogulingo</div>
+                    <div className={styles.gog}>gogulingo</div>
                 </div>
                 <div className={styles.langChoice} onClick={onLangChange}>
                     {langPackage[0][currentLanguage]} {langPackage[1][currentLanguage]}

@@ -39,5 +39,9 @@
         ["Попробуй ещё раз", "Try again"],
         ["Погнали!", "Let's go"],
         ["Стереть", "Erase"]
+    ],
+    "finish": [
+        ["На сегодня задания закончились!", "The tasks are over for today!"],
+        ["Возвращайся завтра!", "Come back tomorrow!"]
     ]
 }

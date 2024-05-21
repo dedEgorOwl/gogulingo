@@ -108,18 +108,33 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage,
                 if (currentQuestion.answers[0][currentLanguage].toLowerCase() == currentQuestionInput.toLowerCase()) {
                     setLastAnswerCorrectness(true);
                     setCurrentQuestionInput('');
+                    if (fakeDb.tasks.length !== current_Question + 1) {
+            
+                    } else {
+                        setCurrentPage("finish");
+                    };
                 };
             break;
             case "image":
                 if (currentQuestion.answers[0][currentLanguage] == currentQuestionInput) {
                     setLastAnswerCorrectness(true);
                     setCurrentQuestionInput('');
+                    if (fakeDb.tasks.length !== current_Question + 1) {
+            
+                    } else {
+                        setCurrentPage("finish");
+                    };
                 };
             break;
             case "puttogether":
                 if (currentOrder.join(' ') === fakeDb.tasks[current_Question].answers[0][currentLanguage]) {
                     setLastAnswerCorrectness(true);
                     setCurrentOrder([]);
+                    if (fakeDb.tasks.length !== current_Question + 1) {
+            
+                    } else {
+                        setCurrentPage("finish");
+                    };
                 };
             break;
         
@@ -127,11 +142,7 @@ function Tasks({langPackage, fakeDb, currentLanguage, playAudio, setCurrentPage,
                 console.error(new Error("no such case O_o"));
         }
 
-        if (fakeDb.tasks.length !== current_Question + 1) {
-            setIsModaltskActive(true);
-        } else {
-            console.log("FINISHED");
-        };
+        setIsModaltskActive(true);
     };
 
     return (
