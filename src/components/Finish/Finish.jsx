@@ -1,7 +1,5 @@
 import styles from './Finish.module.scss';
 
-import Header from '../Header/Header';
-
 function Finish({langPackage, fakeDb, currentLanguage}) {
     return (
         <div className={styles.wrapper}>
