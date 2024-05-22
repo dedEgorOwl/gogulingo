@@ -24,7 +24,7 @@ const whenModal = {
 
 function App() {
     const [scrollTop, setScrollTop] = useState(0);
-    const [currentPage, setCurrentPage] = useState('tasks');
+    const [currentPage, setCurrentPage] = useState('finish');
     const [currentLanguage, setCurrentLanguage] = useState(0);
     const [isLoginActive, setisLoginActive] = useState(false); //false
     const [currentLoginType, setCurrentLoginType] = useState(undefined); //undefined
