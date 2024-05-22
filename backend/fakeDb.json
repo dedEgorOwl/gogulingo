@@ -17,12 +17,11 @@
     ],
     "tasks": [
         {
-            "id": 0,
-            "type": "image",
-            "title": ["Выберете слово «Кофе»", "Select word «Coffee»"],
-            "answers": [[1, 1]],
-            "path_to_file": ["/assets/tasks/butter.svg", "/assets/tasks/coffee.svg", "/assets/tasks/tea.svg"],
-            "labels": [["Butter", "Coffee", "Tea"], ["Масло", "Кофе", "Чай"]]
+            "id": 2,
+            "type": "puttogether",
+            "title": ["Из данных слов составьте предложение", "Make a sentence using these words"],
+            "answers": [["What is the weather today?", "Какая сегодня погода?"]],
+            "shuffled": [["is the today? What weather", "погода? сегодня Какая"]]
         },
         {
             "id": 1,
@@ -32,11 +31,12 @@
             "path_to_file": ["/assets/max_voice_eng.mp3", "/assets/max_voice_rus.mp3"]
         },
         {
-            "id": 2,
-            "type": "puttogether",
-            "title": ["Из данных слов составьте предложение", "Make a sentence using these words"],
-            "answers": [["What is the weather today?", "Какая сегодня погода?"]],
-            "shuffled": [["is the today? What weather", "погода? сегодня Какая"]]
+            "id": 0,
+            "type": "image",
+            "title": ["Выберете слово «Кофе»", "Select word «Coffee»"],
+            "answers": [[1, 1]],
+            "path_to_file": ["/assets/tasks/butter.svg", "/assets/tasks/coffee.svg", "/assets/tasks/tea.svg"],
+            "labels": [["Butter", "Coffee", "Tea"], ["Масло", "Кофе", "Чай"]]
         }
     ]
 }
