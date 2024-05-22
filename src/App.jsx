@@ -24,10 +24,10 @@ const whenModal = {
 
 function App() {
     const [scrollTop, setScrollTop] = useState(0);
-    const [currentPage, setCurrentPage] = useState('index');
+    const [currentPage, setCurrentPage] = useState('tasks');
     const [currentLanguage, setCurrentLanguage] = useState(0);
-    const [isLoginActive, setisLoginActive] = useState(true); //false
-    const [currentLoginType, setCurrentLoginType] = useState(false); //undefined
+    const [isLoginActive, setisLoginActive] = useState(false); //false
+    const [currentLoginType, setCurrentLoginType] = useState(undefined); //undefined
     const [loggedUser, setLoggedUser] = useState(null);
     const [isNotificationActive, setIsNotificationActive] = useState(false);
     const [notificationText, setNotificationText] = useState([]);
