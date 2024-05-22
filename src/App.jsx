@@ -27,7 +27,7 @@ function App() {
     const [currentPage, setCurrentPage] = useState('index');
     const [currentLanguage, setCurrentLanguage] = useState(0);
     const [isLoginActive, setisLoginActive] = useState(true); //false
-    const [currentLoginType, setCurrentLoginType] = useState(true); //undefined
+    const [currentLoginType, setCurrentLoginType] = useState(false); //undefined
     const [loggedUser, setLoggedUser] = useState(null);
     const [isNotificationActive, setIsNotificationActive] = useState(false);
     const [notificationText, setNotificationText] = useState([]);
