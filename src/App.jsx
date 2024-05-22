@@ -26,8 +26,8 @@ function App() {
     const [scrollTop, setScrollTop] = useState(0);
     const [currentPage, setCurrentPage] = useState('index');
     const [currentLanguage, setCurrentLanguage] = useState(0);
-    const [isLoginActive, setisLoginActive] = useState(true); //qwe
-    const [currentLoginType, setCurrentLoginType] = useState(undefined);
+    const [isLoginActive, setisLoginActive] = useState(true); //false
+    const [currentLoginType, setCurrentLoginType] = useState(true); //undefined
     const [loggedUser, setLoggedUser] = useState(null);
     const [isNotificationActive, setIsNotificationActive] = useState(false);
     const [notificationText, setNotificationText] = useState([]);
