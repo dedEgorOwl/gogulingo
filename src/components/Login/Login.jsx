@@ -1,62 +1,63 @@
-import { useState } from 'react';
+import styles from "./Login.module.scss";
+import langPackage from "../../../languagePackage/index.json";
 
-import styles from './Login.module.scss';
+const isNotificationActive = false;
+const currentLang = "ru";
+const currentLoginType = "login";
 
-
-function Login({langPackage, currentLanguage, setisLoginActive, setCurrentLoginType, currentLoginType, handleLogin, isNotificationActive, setIsNotificationActive, notificationText}) {
-    const [loginFormLg, setLoginFormLg] = useState('');
-    const [loginFormPw, setLoginFormPw] = useState('');
-
+function Login() {
     return (
         <div className={styles.wrapper}>
-            {
-                (isNotificationActive) ?
-                    <div className={styles.notification} onClick={() => {setIsNotificationActive(false)}} >
-                        <div className={styles.canc} style={{backgroundImage: `url('/assets/cancel.svg')`}} ></div>
-                        <p>{notificationText[currentLanguage]}</p>
-                    </div> :
-                ('')
-
-            }
+            {isNotificationActive ? (
+                <div className={styles.notification}>
+                    <div className={styles.canc} style={{ backgroundImage: `url('/assets/cancel.svg')` }}></div>
+                    <p>NOTIFICATION SAMPLE</p>
+                </div>
+            ) : (
+                ""
+            )}
 
             <div className={styles.header}>
-                <div className={styles.closeModal} style={{backgroundImage: `url('/assets/close.svg')`}} onClick={() => {setisLoginActive(false); setIsNotificationActive(false)}}></div>
-                <div className={styles.changeType} onClick={() => { 
-                    setCurrentLoginType(!currentLoginType);
-                }}>{langPackage[0][Number(!currentLoginType)][currentLanguage]}</div>
+                <div className={styles.closeModal} style={{ backgroundImage: `url('/assets/close.svg')` }}></div>
+                <div className={styles.changeType}>{currentLoginType === "login" ? <>{langPackage.login[currentLang].signup.toUpperCase()}</> : <>{langPackage.login[currentLang].login.toUpperCase()}</>}</div>
             </div>
 
             <div className={styles.center}>
-                <p>{langPackage[0][Number(currentLoginType)][currentLanguage]}</p>
+                <p>{langPackage.login[currentLang][currentLoginType]}</p>
                 <div className={styles.form}>
-                    {
-                        (Number(currentLoginType) === 0) ? 
+                    {Number(0) === 0 ? (
                         <>
-                            <input type="text" placeholder={langPackage[3][currentLanguage]} value={loginFormLg} onChange={(e) => {setLoginFormLg(e.target.value)}} />
-                            <input type="password" placeholder={langPackage[4][currentLanguage]} value={loginFormPw} onChange={(e) => {setLoginFormPw(e.target.value)}} />
-                        </> :
-                        <>
-                            <input type="number" placeholder={langPackage[6][currentLanguage]} />
-                            <input type="text" placeholder={langPackage[7][currentLanguage]} />
-                            <input type="text" placeholder={langPackage[8][currentLanguage]} />
-                            <input type="password" placeholder={langPackage[4][currentLanguage]} />
+                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login} />
+                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password} />
                         </>
-                    }
+                    ) : (
+                        <>
+                            <input type="number" placeholder="5" />
+                            <input type="text" placeholder="6" />
+                            <input type="text" placeholder="7" />
+                            <input type="password" placeholder="8" />
+                        </>
+                    )}
                 </div>
-                <div className={styles.btn} onClick={() => {handleLogin(loginFormLg, loginFormPw, currentLoginType)}} >{langPackage[2][Number(currentLoginType)][currentLanguage]}</div>
+                <div className={styles.btn}>{langPackage.login[currentLang][currentLoginType].toUpperCase()}</div>
                 <div className={styles.or}>
                     <div className={styles.line}></div>
-                    {langPackage[5][currentLanguage]}
+                    {langPackage.login[currentLang].alternative}
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.socBtns}>
-                <div className={styles.btnSoc}><div className={styles.img} style={{backgroundImage: `url('/assets/facebook.svg')`}}></div><h1 style={{color: '#3b5998'}}>FACEBOOK</h1></div>
-                    <div className={styles.btnSoc}><div className={styles.img} style={{backgroundImage: `url('/assets/google.svg')`}}></div><h1 style={{color: '#3369E8'}}>GOOGLE</h1></div>
+                    <div className={styles.btnSoc}>
+                        <div className={styles.img} style={{ backgroundImage: `url('/assets/facebook.svg')` }}></div>
+                        <h1 style={{ color: "#3b5998" }}>FACEBOOK</h1>
+                    </div>
+                    <div className={styles.btnSoc}>
+                        <div className={styles.img} style={{ backgroundImage: `url('/assets/google.svg')` }}></div>
+                        <h1 style={{ color: "#3369E8" }}>GOOGLE</h1>
+                    </div>
                 </div>
             </div>
-
         </div>
-    )
-};
+    );
+}
 
 export default Login;

@@ -1,0 +1,130 @@
+{
+    "header": {
+        "ru": "ЯЗЫК САЙТА: РУССКИЙ",
+        "eng": "SITE LANGUAGE: ENGLISH"
+    },
+    "main": {
+        "ru": {
+            "title": "Занимайтесь английским всего 5 минут в день. Эффективно и бесплатно!",
+            "register": "НАЧАТЬ",
+            "login": "У МЕНЯ УЖЕ ЕСТЬ АККАУНТ"
+        },
+        "eng": {
+            "title": "Learn English in just 5 minutes a day. For free.",
+            "register": "GET STARTED",
+            "login": "I ALREADY HAVE AN ACCOUNT"
+        }
+    },
+    "about": {
+        "ru": [
+            {
+                "id": 0,
+                "title": "Бесплатно. Весело. Эффективно.",
+                "paragraph": "Учиться с gogulingo весело и интересно. Зарабатывайте очки за правильные ответы, открывайте новые материалы и развивайте навыки разговорной речи. Наши короткие уроки действительно работают, и мы можем это доказать."
+            },
+            {
+                "id": 1,
+                "title": "Научный подход",
+                "paragraph": "Уникальный метод обучения и увлекательные материалы: исследования показывают, что наши курсы эффективно развивают навыки чтения, письма, понимания на слух и устной речи!"
+            },
+            {
+                "id": 2,
+                "title": "Стимул к учёбе",
+                "paragraph": "Игровой подход с забавными заданиями и напоминаниями от нашего талисмана — совёнка goga помогает быстро превратить ежедневные занятия в привычку."
+            },
+            {
+                "id": 3,
+                "title": "Индивидуальное обучение",
+                "paragraph": "Наши уроки объединяют в себе умные алгоритмы искусственного интеллекта и новейшие достижения лингвистики. Сложность и темп обучения подбираются для каждого пользователя индивидуально!"
+            }
+        ],
+        "eng": [
+            {
+                "id": 0,
+                "title": "free. fun. effective.",
+                "paragraph": "Learning with Duolingo is fun, and research shows that it works! With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills."
+            },
+            {
+                "id": 1,
+                "title": "backed by science",
+                "paragraph": "We use a combination of research-backed teaching methods and delightful content to create courses that effectively teach reading, writing, listening, and speaking skills!"
+            },
+            {
+                "id": 2,
+                "title": "stay motivated",
+                "paragraph": "We make it easy to form a habit of language learning with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl."
+            },
+            {
+                "id": 3,
+                "title": "personalized learning",
+                "paragraph": "Combining the best of AI and language science, lessons are tailored to help you learn at just the right level and pace."
+            }
+        ]
+    },
+    "footer": {
+        "ru": [
+            {
+                "title": "О нас",
+                "pages": ["Курсы", "Миссия", "Методология", "Эффективность", "Команда", "Исследования", "Вакансии", "Рукводство", "Магазин", "СМИ", "Инвесторы", "Связь с нами"]
+            },
+            {
+                "title": "Продукты",
+                "pages": ["gogulingo", "gogulingo for Schools", "gogulingo English Test", "Подкаст", "gogulingo for Business", "Super gogulingo"]
+            },
+            {
+                "title": "Приложение",
+                "pages": ["gogulingo для Android", "gogulingo для iOS"]
+            },
+            {
+                "title": "Помощь и поддержка",
+                "pages": ["Справочный центр", "Duolingo for Schools", "Duolingo English Test", "Статус"]
+            },
+            {
+                "title": "Условия и конф.",
+                "pages": ["Правила сообщества", "Условия", "Конфиденциальность"]
+            }
+        ],
+        "eng": [
+            {
+                "title": "About us",
+                "pages": ["Courses", "Mission", "Approach", "Efficacy", "Team", "Research", "Careers", "Brand guidelines", "Store", "Press", "Investors", "Contact us"]
+            },
+            {
+                "title": "Products",
+                "pages": ["gogulingo", "gogulingo for Schools", "gogulingo English Test", "gogulingo ABC", "gogulingo Math", "Podcast"]
+            },
+            {
+                "title": "Apps",
+                "pages": ["gogulingo for Android", "gogulingo for iOS"]
+            },
+            {
+                "title": "Help and support",
+                "pages": ["Duolingo FAQs", "Schools FAQs", "Duolingo English Test", "Status"]
+            },
+            {
+                "title": "Privacy and terms",
+                "pages": ["Community guidelines", "Terms", "Privacy"]
+            }
+        ]
+    },
+    "login": {
+        "ru": {
+            "login": "Войти",
+            "signup": "Регистрация",
+            "alternative": "ИЛИ",
+            "placeholders": {
+                "login": "Имя пользователя",
+                "password": "Пароль"
+            }
+        },
+        "eng": {
+            "login": "Login",
+            "signup": "Sign up",
+            "alternative": "OR",
+            "placeholders": {
+                "login": "username",
+                "password": "Password"
+            }
+        }
+    }
+}

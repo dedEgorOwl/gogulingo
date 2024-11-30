@@ -1,27 +1,29 @@
-import styles from './Footer.module.scss';
+import styles from "./Footer.module.scss";
+import langPackage from "../../../languagePackage/index.json";
 
-function Footer({langPackage, currentLanguage}) {
+const currentLang = "eng";
 
+function Footer() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                {
-                    langPackage.map((element, index) => {
-                        return (
-                            <div className={styles.element} key={index}>
-                                <div className={styles.heading}>{element[currentLanguage][0]}</div>
-                                {
-                                    element[currentLanguage][1].map((item, jindex) => {
-                                        return <div className={styles.item} key={jindex}>{item}</div>
-                                    })
-                                }
-                            </div>
-                        )
-                    })
-                }
+                {langPackage.footer[currentLang].map((element, index) => {
+                    return (
+                        <div className={styles.element} key={index}>
+                            <div className={styles.heading}>{element.title}</div>
+                            {element.pages.map((item, jindex) => {
+                                return (
+                                    <div className={styles.item} key={jindex}>
+                                        {item}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    );
+                })}
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default Footer;

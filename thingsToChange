@@ -1,0 +1,14 @@
+//GLOBAL
+    -manage language change
+
+
+// Header
+    -manage "isLoginActive"
+    -manage scroll border bottom
+
+
+//Main
+    -manage modal windows
+
+//About
+    -

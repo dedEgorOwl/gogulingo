@@ -1,30 +1,21 @@
-import styles from './Main.module.scss';
+import styles from "./Main.module.scss";
+import langPackage from "../../../languagePackage/index.json";
 
+const currentLanguage = "eng";
 
-function Main({langPackage, currentLanguage, setisLoginActive, setCurrentLoginType}) {
-
+function Main() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <div className={styles.left} style={{backgroundImage: "url('/assets/duolingo.svg')"}}></div>
+                <div className={styles.left} style={{ backgroundImage: "url('/assets/duolingo.svg')" }}></div>
                 <div className={styles.right}>
-                    <p>{langPackage[0][currentLanguage]}</p>
-                    <div className={styles.startBtn} onClick={() => {
-                        setCurrentLoginType(true);
-                        setisLoginActive(true);
-                        }}>
-                        {langPackage[1][currentLanguage]}
-                    </div>
-                    <div className={styles.alreadyRegisteredBtn} onClick={() => {
-                        setCurrentLoginType(false);
-                        setisLoginActive(true);
-                        }}>
-                        {langPackage[2][currentLanguage]}
-                    </div>
+                    <p>{langPackage.main[currentLanguage].title}</p>
+                    <div className={styles.startBtn}>{langPackage.main[currentLanguage].register}</div>
+                    <div className={styles.alreadyRegisteredBtn}>{langPackage.main[currentLanguage].login}</div>
                 </div>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default Main;
