@@ -25,17 +25,17 @@ function Login() {
             <div className={styles.center}>
                 <p>{langPackage.login[currentLang][currentLoginType]}</p>
                 <div className={styles.form}>
-                    {Number(0) === 0 ? (
+                    {currentLoginType === "login" ? (
                         <>
-                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login} />
-                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password} />
+                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()} />
+                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()} />
                         </>
                     ) : (
                         <>
-                            <input type="number" placeholder="5" />
-                            <input type="text" placeholder="6" />
-                            <input type="text" placeholder="7" />
-                            <input type="password" placeholder="8" />
+                            <input type="number" placeholder={langPackage.login[currentLang].placeholders.age.toLowerCase()} min={0} />
+                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()} />
+                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.email.toLowerCase()} />
+                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()} />
                         </>
                     )}
                 </div>

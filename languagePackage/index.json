@@ -114,7 +114,9 @@
             "alternative": "ИЛИ",
             "placeholders": {
                 "login": "Имя пользователя",
-                "password": "Пароль"
+                "password": "Пароль",
+                "age": "Возраст",
+                "email": "Email"
             }
         },
         "eng": {
@@ -123,7 +125,9 @@
             "alternative": "OR",
             "placeholders": {
                 "login": "username",
-                "password": "Password"
+                "password": "Password",
+                "age": "Age",
+                "email": "Email"
             }
         }
     }
