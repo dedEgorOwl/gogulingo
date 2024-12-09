@@ -35,8 +35,8 @@
                 width: 40px;
                 height: 40px;
                 background-size: cover;
-            };
-        };
+            }
+        }
 
         .langChoice {
             line-height: 17px;
@@ -47,9 +47,9 @@
 
             &:hover {
                 color: rgb(202, 202, 202);
-            };
-        };
-    };
+            }
+        }
+    }
 
     @media screen and (max-width: 1080px) {
         border-bottom: 2px solid lightgray;
@@ -61,7 +61,7 @@
 
             .langChoice {
                 display: none;
-            };
-        };
-    };
+            }
+        }
+    }
 }

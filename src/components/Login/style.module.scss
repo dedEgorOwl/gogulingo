@@ -24,7 +24,7 @@
             user-select: none;
             cursor: pointer;
             font-family: dinroundpro_bold;
-            color: #199EDD;
+            color: #199edd;
 
             &:hover {
                 background-color: lightgray;
@@ -36,7 +36,7 @@
                 margin-top: 2px;
             }
         }
-    
+
         .closeModal {
             width: 32px;
             height: 32px;
@@ -81,20 +81,20 @@
                 border: 2px solid rgb(184, 182, 182);
                 border-radius: 10px;
                 font-size: large;
-                
+
                 @media screen and (max-width: 700px) {
                     width: 100%;
                 }
-                
+
                 &:focus {
-                    border-color: #199EDD;
+                    border-color: #199edd;
                 }
             }
         }
 
         .btn {
             cursor: pointer;
-            background-color: #199EDD;
+            background-color: #199edd;
             width: 350px;
             padding: 5px 15px;
             height: 40px;
@@ -168,7 +168,7 @@
                     background-size: cover;
                     background-position: center;
                 }
-    
+
                 &:active {
                     border-bottom-width: 2px;
                     margin-top: 22px;

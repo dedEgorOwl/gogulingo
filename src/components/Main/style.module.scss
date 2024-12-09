@@ -39,7 +39,7 @@
                 justify-content: center;
                 align-items: center;
                 letter-spacing: 1px;
-                background-color: #58CC02;
+                background-color: #58cc02;
                 border-color: #5aa801;
                 font-size: 18px;
                 color: white;
@@ -50,8 +50,8 @@
                 user-select: none;
 
                 &:hover {
-                    background-color: #61E002;
-                    border-color: #61B800;
+                    background-color: #61e002;
+                    border-color: #61b800;
                 }
 
                 &:active {
@@ -68,7 +68,7 @@
                 align-items: center;
                 letter-spacing: 1px;
                 font-size: 18px;
-                color: #199EDD;
+                color: #199edd;
                 border-radius: 10px;
                 border: lightgray 2px solid;
                 border-bottom-width: 4px;
@@ -101,9 +101,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        
         .container {
-
             .left {
                 width: 312px;
                 height: 312px;
@@ -112,10 +110,7 @@
     }
 
     @media screen and (max-width: 460px) {
-
         .container {
-            
-
             .right {
                 width: fit-content;
 

@@ -1,11 +1,13 @@
-import styles from "./Login.module.scss";
+import React from "react";
+
+import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 
 const isNotificationActive = false;
 const currentLang = "ru";
 const currentLoginType = "login";
 
-function Login() {
+const Login: React.FC = () => {
     return (
         <div className={styles.wrapper}>
             {isNotificationActive ? (
@@ -58,6 +60,6 @@ function Login() {
             </div>
         </div>
     );
-}
+};
 
 export default Login;

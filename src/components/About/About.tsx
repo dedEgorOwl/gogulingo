@@ -1,9 +1,10 @@
-import styles from "./About.module.scss";
+import React from "react";
+import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 
 const currentLang = "eng";
 
-function About() {
+const About: React.FC = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -33,6 +34,6 @@ function About() {
             </div>
         </div>
     );
-}
+};
 
 export default About;

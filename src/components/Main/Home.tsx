@@ -1,9 +1,10 @@
-import styles from "./Main.module.scss";
+import React from "react";
+import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 
 const currentLanguage = "eng";
 
-function Main() {
+const Home: React.FC = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -16,6 +17,6 @@ function Main() {
             </div>
         </div>
     );
-}
+};
 
-export default Main;
+export default Home;

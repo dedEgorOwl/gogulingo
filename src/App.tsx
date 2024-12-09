@@ -1,18 +1,20 @@
+import React from "react";
+
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Home from "./components/Main/Home";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 
-function App() {
+const App: React.FC = () => {
     return (
         <>
             <Header />
-            <Main />
+            <Home />
             <About />
             <Footer />
         </>
     );
-}
+};
 
 export default App;

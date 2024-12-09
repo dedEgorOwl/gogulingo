@@ -1,9 +1,11 @@
-import styles from "./Footer.module.scss";
+import React from "react";
+
+import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 
 const currentLang = "eng";
 
-function Footer() {
+const Footer: React.FC = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -24,6 +26,6 @@ function Footer() {
             </div>
         </div>
     );
-}
+};
 
 export default Footer;
