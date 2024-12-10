@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@font-face {
+    font-family: dinroundpro_bold;
+    src: url("/assets/fonts/din-round/dinroundpro_bold.otf");
+}
+
+@font-face {
+    font-family: dinroundpro_medium;
+    src: url("/assets/fonts/din-round/dinroundpro_medi.otf");
+}
+
+@font-face {
+    font-family: dinroundpro_light;
+    src: url("/assets/fonts/din-round/dinroundpro_light.otf");
+}
