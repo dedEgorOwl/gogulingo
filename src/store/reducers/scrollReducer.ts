@@ -1,15 +1,11 @@
-import { ScrollAction, ScrollActionTypes, ScrollState } from "../../types/scroll";
+import { ScrollAction, ScrollActionTypes } from "../../types/scroll";
 
-const initialState: ScrollState = {
-    scroll: 0,
-};
+const initialState: number = 0;
 
-export const scrollReducer = (state: ScrollState = initialState, action: ScrollAction): ScrollState => {
-    console.log(action.payload);
-
+export const scrollReducer = (state: number = initialState, action: ScrollAction): number => {
     switch (action.type) {
         case ScrollActionTypes.CHANGE_SCROLL:
-            return { scroll: action.payload };
+            return action.payload;
         default:
             return state;
     }

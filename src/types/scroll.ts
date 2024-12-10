@@ -1,7 +1,3 @@
-export interface ScrollState {
-    scroll: number;
-}
-
 export interface ScrollAction {
     type: string;
     payload: number;

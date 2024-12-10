@@ -7,13 +7,13 @@ import { useActions } from "../../hooks/useActions";
 const isLoginActive = false;
 
 const Header: React.FC = () => {
-    const { language } = useTypedSelector((state) => state.language);
-    const { scroll } = useTypedSelector((state) => state.scroll);
+    const currentLang = useTypedSelector((state) => state.language);
+    const scroll = useTypedSelector((state) => state.scroll);
 
     const { ChangeLanguage } = useActions();
 
     return (
-        <div className={styles.wrapper} style={{ borderBottom: scroll > 0 ? "solid 1px #ccc" : "solid 1px transparent", padding: isLoginActive ? "15px 0" : "" }}>
+        <div className={styles.wrapper} style={{ borderBottom: scroll > 100 ? "solid 1px #ccc" : "solid 1px transparent", padding: isLoginActive ? "15px 0" : "" }}>
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <div className={styles.img} style={{ backgroundImage: "url(/assets/logo-green.svg)" }}></div>
@@ -22,10 +22,10 @@ const Header: React.FC = () => {
                 <div
                     className={styles.langChoice}
                     onClick={() => {
-                        ChangeLanguage(language);
+                        ChangeLanguage(currentLang);
                     }}
                 >
-                    {langPackage.header[language]}
+                    {langPackage.header[currentLang]}
                 </div>
             </div>
         </div>

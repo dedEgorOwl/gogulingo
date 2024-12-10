@@ -1,7 +1,3 @@
-export interface LanguageState {
-    language: string;
-}
-
 export interface LanguageAction {
     type: string;
 }

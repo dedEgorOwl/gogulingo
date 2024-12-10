@@ -2,12 +2,14 @@ import React from "react";
 
 import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const isNotificationActive = false;
-const currentLang = "ru";
 const currentLoginType = "login";
 
 const Login: React.FC = () => {
+    const currentLang = useTypedSelector((state) => state.language);
+
     return (
         <div className={styles.wrapper}>
             {isNotificationActive ? (

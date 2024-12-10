@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 
-const currentLang = "eng";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const About: React.FC = () => {
+    const currentLang = useTypedSelector((state) => state.language);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
