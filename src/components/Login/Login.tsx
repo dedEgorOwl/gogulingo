@@ -3,12 +3,15 @@ import React from "react";
 import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useActions } from "../../hooks/useActions";
 
 const isNotificationActive = false;
-const currentLoginType = "login";
 
 const Login: React.FC = () => {
     const currentLang = useTypedSelector((state) => state.language);
+    const currentLoginType = useTypedSelector((state) => state.login.type);
+
+    const { ChangeLoginInputs, ChangeModalState, ChangeLoginType } = useActions();
 
     return (
         <div className={styles.wrapper}>
@@ -22,8 +25,15 @@ const Login: React.FC = () => {
             )}
 
             <div className={styles.header}>
-                <div className={styles.closeModal} style={{ backgroundImage: `url('/assets/close.svg')` }}></div>
-                <div className={styles.changeType}>{currentLoginType === "login" ? <>{langPackage.login[currentLang].signup.toUpperCase()}</> : <>{langPackage.login[currentLang].login.toUpperCase()}</>}</div>
+                <div className={styles.closeModal} onClick={() => ChangeModalState("login", false)} style={{ backgroundImage: `url('/assets/close.svg')` }}></div>
+                <div
+                    className={styles.changeType}
+                    onClick={() => {
+                        currentLoginType === "login" ? ChangeLoginType("signup") : ChangeLoginType("login");
+                    }}
+                >
+                    {currentLoginType === "login" ? <>{langPackage.login[currentLang].signup.toUpperCase()}</> : <>{langPackage.login[currentLang].login.toUpperCase()}</>}
+                </div>
             </div>
 
             <div className={styles.center}>
@@ -31,8 +41,20 @@ const Login: React.FC = () => {
                 <div className={styles.form}>
                     {currentLoginType === "login" ? (
                         <>
-                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()} />
-                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()} />
+                            <input
+                                type="text"
+                                placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()}
+                                onChange={(e) => {
+                                    ChangeLoginInputs("login", e.target.value);
+                                }}
+                            />
+                            <input
+                                type="password"
+                                onChange={(e) => {
+                                    ChangeLoginInputs("password", e.target.value);
+                                }}
+                                placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()}
+                            />
                         </>
                     ) : (
                         <>

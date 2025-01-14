@@ -18,10 +18,10 @@
 
         .right {
             width: 424px;
-            height: 424px;
+            height: 280px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             flex-direction: column;
             font-family: dinroundpro_bold;
 
@@ -82,7 +82,7 @@
 
                 &:active {
                     border-bottom-width: 2px;
-                    margin-top: 2px;
+                    margin-top: 12px;
                 }
             }
         }

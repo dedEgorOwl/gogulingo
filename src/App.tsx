@@ -7,9 +7,11 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 
 import { useActions } from "./hooks/useActions";
+import { useTypedSelector } from "./hooks/useTypedSelector";
 
 const App: React.FC = () => {
     const { ChangeScroll } = useActions();
+    const isLoginActive = useTypedSelector((state) => state.modals.login);
 
     const handleScroll = () => {
         const position: number = window.scrollY;
@@ -30,6 +32,7 @@ const App: React.FC = () => {
             <Home />
             <About />
             <Footer />
+            {isLoginActive ? <Login /> : ""}
         </>
     );
 };
