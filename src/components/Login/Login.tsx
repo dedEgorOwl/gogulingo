@@ -13,6 +13,16 @@ const Login: React.FC = () => {
 
     const { ChangeLoginInputs, ChangeModalState, ChangeLoginType } = useActions();
 
+    const loginSubmit = (event: SubmitEvent) => {
+        event.preventDefault();
+        console.log("login event");
+    };
+
+    const registerSubmit = (event: SubmitEvent) => {
+        event.preventDefault();
+        console.log("register event");
+    };
+
     return (
         <div className={styles.wrapper}>
             {isNotificationActive ? (
@@ -38,7 +48,7 @@ const Login: React.FC = () => {
 
             <div className={styles.center}>
                 <p>{langPackage.login[currentLang][currentLoginType]}</p>
-                <div className={styles.form}>
+                <form>
                     {currentLoginType === "login" ? (
                         <>
                             <input
@@ -55,6 +65,9 @@ const Login: React.FC = () => {
                                 }}
                                 placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()}
                             />
+                            <button type="submit" className={styles.btn} onClick={(event) => loginSubmit(event)}>
+                                {langPackage.login[currentLang][currentLoginType].toUpperCase()}
+                            </button>
                         </>
                     ) : (
                         <>
@@ -62,10 +75,12 @@ const Login: React.FC = () => {
                             <input type="text" placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()} />
                             <input type="text" placeholder={langPackage.login[currentLang].placeholders.email.toLowerCase()} />
                             <input type="password" placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()} />
+                            <button type="submit" className={styles.btn} onClick={(event) => registerSubmit(event)}>
+                                {langPackage.login[currentLang][currentLoginType].toUpperCase()}
+                            </button>
                         </>
                     )}
-                </div>
-                <div className={styles.btn}>{langPackage.login[currentLang][currentLoginType].toUpperCase()}</div>
+                </form>
                 <div className={styles.or}>
                     <div className={styles.line}></div>
                     {langPackage.login[currentLang].alternative}
