@@ -24,3 +24,7 @@ REFERENCES
 *.njsproj
 *.sln
 *.sw?
+
+# local env files
+.env*.local
+.env
