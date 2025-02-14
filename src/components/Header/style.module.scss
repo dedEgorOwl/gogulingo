@@ -57,10 +57,24 @@
         .container {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+    }
 
-            .langChoice {
-                display: none;
+    @media screen and (max-width: 768px) {
+        .container {
+            font-size: 14px;
+
+            .logo {
+                .img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .gog {
+                    font-size: 24px;
+                }
             }
         }
     }
