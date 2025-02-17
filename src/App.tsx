@@ -27,13 +27,13 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <>
+        <div style={{ overflowY: isLoginActive ? "hidden" : "visible", height: isLoginActive ? "100vh" : "fit-content" }}>
             <Header />
             <Home />
             <About />
             <Footer />
             {isLoginActive ? <Login /> : ""}
-        </>
+        </div>
     );
 };
 

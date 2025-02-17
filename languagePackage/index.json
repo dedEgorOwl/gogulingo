@@ -117,6 +117,9 @@
                 "password": "Пароль",
                 "age": "Возраст",
                 "email": "Email"
+            },
+            "notifications": {
+                "emptyInputs": "Поля должны быть заполнены!"
             }
         },
         "eng": {
@@ -128,6 +131,9 @@
                 "password": "Password",
                 "age": "Age",
                 "email": "Email"
+            },
+            "notifications": {
+                "emptyInputs": "Fields must be completed!"
             }
         }
     }

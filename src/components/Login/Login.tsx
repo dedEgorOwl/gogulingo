@@ -1,45 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "./style.module.scss";
 import langPackage from "../../../languagePackage/index.json";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
-
-const isNotificationActive = false;
+import Notification from "../Notification/Notification";
 
 const Login: React.FC = () => {
     const currentLang = useTypedSelector((state) => state.language);
     const currentLoginType = useTypedSelector((state) => state.login.type);
 
+    const [isNotificationActive, setIsNotificationActive] = useState(false);
+    const [notificationText, setNotificationText] = useState("");
+
+    const [loginInputs, setLoginInputs] = useState({
+        username: "",
+        password: "",
+    });
+
+    const [registerInputs, setRegisterInputs] = useState({
+        username: "",
+        email: "",
+        password: "",
+    });
+
     const { ChangeLoginInputs, ChangeModalState, ChangeLoginType } = useActions();
 
     const loginSubmit = (event: SubmitEvent) => {
         event.preventDefault();
-        console.log("login event");
+        if (loginInputs.username === "" || loginInputs.password === "") {
+            setNotificationText(langPackage.login[currentLang].notifications.emptyInputs);
+            setIsNotificationActive(true);
+            return;
+        }
+        ChangeLoginInputs("login", loginInputs.username);
+        ChangeLoginInputs("password", loginInputs.password);
     };
 
     const registerSubmit = (event: SubmitEvent) => {
         event.preventDefault();
-        console.log("register event");
+        if (registerInputs.username === "" || registerInputs.password === "" || registerInputs.email) {
+            setNotificationText(langPackage.login[currentLang].notifications.emptyInputs);
+            setIsNotificationActive(true);
+            return;
+        }
+        ChangeLoginInputs("login", registerInputs.username);
+        ChangeLoginInputs("password", registerInputs.password);
+        ChangeLoginInputs("email", registerInputs.email);
+    };
+
+    const onNotificationClick = () => {
+        setIsNotificationActive(false);
     };
 
     return (
         <div className={styles.wrapper}>
-            {isNotificationActive ? (
-                <div className={styles.notification}>
-                    <div className={styles.canc} style={{ backgroundImage: `url('/assets/cancel.svg')` }}></div>
-                    <p>NOTIFICATION SAMPLE</p>
-                </div>
-            ) : (
-                ""
-            )}
+            {isNotificationActive ? <Notification onNotificationClick={onNotificationClick} text={notificationText} /> : ""}
 
             <div className={styles.header}>
                 <div className={styles.closeModal} onClick={() => ChangeModalState("login", false)} style={{ backgroundImage: `url('/assets/close.svg')` }}></div>
                 <div
                     className={styles.changeType}
                     onClick={() => {
-                        currentLoginType === "login" ? ChangeLoginType("signup") : ChangeLoginType("login");
+                        if (currentLoginType === "login") {
+                            setLoginInputs({ username: "", password: "" });
+                            ChangeLoginInputs("login", "");
+                            ChangeLoginInputs("password", "");
+                            ChangeLoginType("signup");
+                        } else {
+                            setRegisterInputs({ username: "", email: "", password: "" });
+                            ChangeLoginInputs("login", "");
+                            ChangeLoginInputs("password", "");
+                            ChangeLoginInputs("email", "");
+                            ChangeLoginType("login");
+                        }
                     }}
                 >
                     {currentLoginType === "login" ? <>{langPackage.login[currentLang].signup.toUpperCase()}</> : <>{langPackage.login[currentLang].login.toUpperCase()}</>}
@@ -55,15 +89,19 @@ const Login: React.FC = () => {
                                 type="text"
                                 placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()}
                                 onChange={(e) => {
-                                    ChangeLoginInputs("login", e.target.value);
+                                    setLoginInputs({ ...loginInputs, username: e.target.value });
                                 }}
+                                value={loginInputs.username}
+                                required
                             />
                             <input
                                 type="password"
                                 onChange={(e) => {
-                                    ChangeLoginInputs("password", e.target.value);
+                                    setLoginInputs({ ...loginInputs, password: e.target.value });
                                 }}
                                 placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()}
+                                value={loginInputs.password}
+                                required
                             />
                             <button type="submit" className={styles.btn} onClick={(event) => loginSubmit(event)}>
                                 {langPackage.login[currentLang][currentLoginType].toUpperCase()}
@@ -71,10 +109,33 @@ const Login: React.FC = () => {
                         </>
                     ) : (
                         <>
-                            <input type="number" placeholder={langPackage.login[currentLang].placeholders.age.toLowerCase()} min={0} />
-                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()} />
-                            <input type="text" placeholder={langPackage.login[currentLang].placeholders.email.toLowerCase()} />
-                            <input type="password" placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()} />
+                            <input
+                                type="text"
+                                placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()}
+                                onChange={(event) => {
+                                    setRegisterInputs({ ...registerInputs, username: event.target.value });
+                                }}
+                                value={registerInputs.username}
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder={langPackage.login[currentLang].placeholders.email.toLowerCase()}
+                                onChange={(event) => {
+                                    setRegisterInputs({ ...registerInputs, email: event.target.value });
+                                }}
+                                value={registerInputs.email}
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder={langPackage.login[currentLang].placeholders.password.toLowerCase()}
+                                onChange={(event) => {
+                                    setRegisterInputs({ ...registerInputs, password: event.target.value });
+                                }}
+                                required
+                                value={registerInputs.password}
+                            />
                             <button type="submit" className={styles.btn} onClick={(event) => registerSubmit(event)}>
                                 {langPackage.login[currentLang][currentLoginType].toUpperCase()}
                             </button>

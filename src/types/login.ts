@@ -1,6 +1,7 @@
 export interface LoginInputState {
     login: string;
     password: string;
+    email: string;
     type: string | null;
 }
 
@@ -12,5 +13,6 @@ export interface LoginInputAction {
 export enum LoginInputActionTypes {
     CHANGE_LOGIN_INPUT = "CHANGE_LOGIN_INPUT",
     CHANGE_PASSWORD_INPUT = "CHANGE_PASSWORD_INPUT",
+    CHANGE_EMAIL_INPUT = "CHANGE_EMAIL_INPUT",
     CHANGE_LOGIN_TYPE = "CHANGE_LOGIN_TYPE",
 }
