@@ -24,7 +24,7 @@ const Login: React.FC = () => {
         password: "",
     });
 
-    const { ChangeLoginInputs, ChangeModalState, ChangeLoginType } = useActions();
+    const { ChangeLoginInputs, ChangeModalState, ChangeLoginType, RegisterRequest, LoginRequest } = useActions();
 
     const loginSubmit = (event: SubmitEvent) => {
         event.preventDefault();
@@ -35,11 +35,12 @@ const Login: React.FC = () => {
         }
         ChangeLoginInputs("login", loginInputs.username);
         ChangeLoginInputs("password", loginInputs.password);
+        LoginRequest(loginInputs.username, loginInputs.password);
     };
 
     const registerSubmit = (event: SubmitEvent) => {
         event.preventDefault();
-        if (registerInputs.username === "" || registerInputs.password === "" || registerInputs.email) {
+        if (registerInputs.username === "" || registerInputs.password === "" || registerInputs.email === "") {
             setNotificationText(langPackage.login[currentLang].notifications.emptyInputs);
             setIsNotificationActive(true);
             return;
@@ -47,6 +48,7 @@ const Login: React.FC = () => {
         ChangeLoginInputs("login", registerInputs.username);
         ChangeLoginInputs("password", registerInputs.password);
         ChangeLoginInputs("email", registerInputs.email);
+        RegisterRequest(registerInputs.email, registerInputs.password, registerInputs.username);
     };
 
     const onNotificationClick = () => {
@@ -87,7 +89,7 @@ const Login: React.FC = () => {
                         <>
                             <input
                                 type="text"
-                                placeholder={langPackage.login[currentLang].placeholders.login.toLowerCase()}
+                                placeholder={langPackage.login[currentLang].placeholders.email.toLowerCase()}
                                 onChange={(e) => {
                                     setLoginInputs({ ...loginInputs, username: e.target.value });
                                 }}

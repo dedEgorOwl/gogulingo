@@ -14,7 +14,7 @@ export const loginReducer = (state: LoginInputState = initialState, action: Logi
         case LoginInputActionTypes.CHANGE_PASSWORD_INPUT:
             return { ...state, password: action.payload };
         case LoginInputActionTypes.CHANGE_EMAIL_INPUT:
-            return { ...state, password: action.payload };
+            return { ...state, email: action.payload };
         case LoginInputActionTypes.CHANGE_LOGIN_TYPE:
             return { ...state, type: action.payload };
         default:
