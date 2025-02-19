@@ -24,7 +24,7 @@ const Login: React.FC = () => {
         password: "",
     });
 
-    const { ChangeLoginInputs, ChangeModalState, ChangeLoginType, RegisterRequest, LoginRequest } = useActions();
+    const { ChangeModalState, ChangeLoginType } = useActions();
 
     const loginSubmit = (event: SubmitEvent) => {
         event.preventDefault();
@@ -33,9 +33,6 @@ const Login: React.FC = () => {
             setIsNotificationActive(true);
             return;
         }
-        ChangeLoginInputs("login", loginInputs.username);
-        ChangeLoginInputs("password", loginInputs.password);
-        LoginRequest(loginInputs.username, loginInputs.password);
     };
 
     const registerSubmit = (event: SubmitEvent) => {
@@ -45,10 +42,6 @@ const Login: React.FC = () => {
             setIsNotificationActive(true);
             return;
         }
-        ChangeLoginInputs("login", registerInputs.username);
-        ChangeLoginInputs("password", registerInputs.password);
-        ChangeLoginInputs("email", registerInputs.email);
-        RegisterRequest(registerInputs.email, registerInputs.password, registerInputs.username);
     };
 
     const onNotificationClick = () => {
@@ -66,14 +59,9 @@ const Login: React.FC = () => {
                     onClick={() => {
                         if (currentLoginType === "login") {
                             setLoginInputs({ username: "", password: "" });
-                            ChangeLoginInputs("login", "");
-                            ChangeLoginInputs("password", "");
                             ChangeLoginType("signup");
                         } else {
                             setRegisterInputs({ username: "", email: "", password: "" });
-                            ChangeLoginInputs("login", "");
-                            ChangeLoginInputs("password", "");
-                            ChangeLoginInputs("email", "");
                             ChangeLoginType("login");
                         }
                     }}
