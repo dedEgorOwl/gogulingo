@@ -19,7 +19,7 @@ const Home: React.FC = () => {
                         <div
                             className={styles.startBtn}
                             onClick={() => {
-                                ChangeLoginType("login");
+                                ChangeLoginType("signup");
                                 ChangeModalState("login", true);
                             }}
                         >
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                         <div
                             className={styles.alreadyRegisteredBtn}
                             onClick={() => {
-                                ChangeLoginType("signup");
+                                ChangeLoginType("login");
                                 ChangeModalState("login", true);
                             }}
                         >
