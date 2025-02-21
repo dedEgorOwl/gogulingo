@@ -6,9 +6,8 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 import Notification from "../Notification/Notification";
 
-const Login: React.FC = () => {
+const Login: React.FC = ({ setCurrentLoginType, currentLoginType }) => {
     const currentLang = useTypedSelector((state) => state.language);
-    const currentLoginType = useTypedSelector((state) => state.login.type);
 
     const [isNotificationActive, setIsNotificationActive] = useState(false);
     const [notificationText, setNotificationText] = useState("");
@@ -24,7 +23,7 @@ const Login: React.FC = () => {
         password: "",
     });
 
-    const { ChangeModalState, ChangeLoginType } = useActions();
+    const { ChangeModalState } = useActions();
 
     const loginSubmit = (event: SubmitEvent) => {
         event.preventDefault();
@@ -59,10 +58,10 @@ const Login: React.FC = () => {
                     onClick={() => {
                         if (currentLoginType === "login") {
                             setLoginInputs({ username: "", password: "" });
-                            ChangeLoginType("signup");
+                            setCurrentLoginType("signup");
                         } else {
                             setRegisterInputs({ username: "", email: "", password: "" });
-                            ChangeLoginType("login");
+                            setCurrentLoginType("login");
                         }
                     }}
                 >

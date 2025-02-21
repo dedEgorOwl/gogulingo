@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -12,6 +12,8 @@ import { useTypedSelector } from "./hooks/useTypedSelector";
 const App: React.FC = () => {
     const { ChangeScroll } = useActions();
     const isLoginActive = useTypedSelector((state) => state.modals.login);
+
+    const [currentLoginType, setCurrentLoginType] = useState("");
 
     const handleScroll = () => {
         const position: number = window.scrollY;
@@ -29,10 +31,10 @@ const App: React.FC = () => {
     return (
         <div style={{ overflowY: isLoginActive ? "hidden" : "visible", height: isLoginActive ? "100vh" : "fit-content" }}>
             <Header />
-            <Home />
+            <Home setCurrentLoginType={setCurrentLoginType} />
             <About />
             <Footer />
-            {isLoginActive ? <Login /> : ""}
+            {isLoginActive ? <Login setCurrentLoginType={setCurrentLoginType} currentLoginType={currentLoginType} /> : ""}
         </div>
     );
 };

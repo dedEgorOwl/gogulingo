@@ -4,10 +4,10 @@ import langPackage from "../../../languagePackage/index.json";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 
-const Home: React.FC = () => {
+const Home: React.FC = ({ setCurrentLoginType }) => {
     const currentLang = useTypedSelector((state) => state.language);
 
-    const { ChangeModalState, ChangeLoginType } = useActions();
+    const { ChangeModalState } = useActions();
 
     return (
         <div className={styles.wrapper}>
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
                         <div
                             className={styles.startBtn}
                             onClick={() => {
-                                ChangeLoginType("signup");
+                                setCurrentLoginType("signup");
                                 ChangeModalState("login", true);
                             }}
                         >
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                         <div
                             className={styles.alreadyRegisteredBtn}
                             onClick={() => {
-                                ChangeLoginType("login");
+                                setCurrentLoginType("login");
                                 ChangeModalState("login", true);
                             }}
                         >
