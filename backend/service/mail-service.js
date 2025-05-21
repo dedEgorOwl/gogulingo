@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 class mailService {
     constructor() {
         this.transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
+            host: "smtp.yandex.ru",
             port: process.env.SMTP_PORT,
             secure: true,
             auth: {
