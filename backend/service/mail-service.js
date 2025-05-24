@@ -4,18 +4,18 @@ class mailService {
     constructor() {
         this.transporter = nodemailer.createTransport({
             host: "smtp.yandex.ru",
-            port: process.env.SMTP_PORT,
+            port: "465",
             secure: true,
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASSWORD,
+                user: "gogahahafunny@yandex.ru",
+                pass: "fxupnlyvdgoidbyq",
             },
         });
     }
 
     async sendActivationMail(email, link) {
         await this.transporter.sendMail({
-            from: process.env.SMTP_USER,
+            from: "gogahahafunny@yandex.ru",
             to: email,
             subject: "Активация аккаунта gogulingo",
             text: "",
