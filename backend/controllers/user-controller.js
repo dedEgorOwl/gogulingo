@@ -1,46 +1,47 @@
-import userService from "../service/user-service.js";
+import userService from '../service/user-service.js';
+import { dotenvInit } from '../dotenvInit.js';
 
 class userController {
-    async registration(req, res, next) {
-        try {
-            const { username, email, password } = req.body;
-            const userData = await userService.registration(username, email, password);
-            res.cookie("refreshToken", userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
-            return res.json(userData);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    async login(req, res, next) {
-        try {
-        } catch (error) {}
-    }
-    async logout(req, res, next) {
-        try {
-        } catch (error) {}
-    }
-    async logout(req, res, next) {
-        try {
-        } catch (error) {}
-    }
-    async activate(req, res, next) {
-        try {
-            const activationLink = req.params.link;
-            await userService.activate(activationLink);
-            return res.redirect(process.env.CLIENT_URL);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    async refresh(req, res, next) {
-        try {
-        } catch (error) {}
-    }
-    async getUsers(req, res, next) {
-        try {
-            res.json(["123", "456"]);
-        } catch (error) {}
-    }
+	async registration(req, res, next) {
+		try {
+			const { username, email, password } = req.body;
+			const userData = await userService.registration(username, email, password);
+			res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
+			return res.json(userData);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+	async login(req, res, next) {
+		try {
+		} catch (error) {}
+	}
+	async logout(req, res, next) {
+		try {
+		} catch (error) {}
+	}
+	async logout(req, res, next) {
+		try {
+		} catch (error) {}
+	}
+	async activate(req, res, next) {
+		try {
+			const activationLink = req.params.link;
+			await userService.activate(activationLink);
+			return res.redirect(dotenvInit.parsed.CLIENT_URL);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+	async refresh(req, res, next) {
+		try {
+		} catch (error) {}
+	}
+	async getUsers(req, res, next) {
+		try {
+			res.json(['123', '456']);
+		} catch (error) {}
+	}
 }
 
 export default new userController();

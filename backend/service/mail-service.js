@@ -1,21 +1,22 @@
 import nodemailer from 'nodemailer';
+import { dotenvInit } from '../dotenvInit.js';
 
 class mailService {
 	constructor() {
 		this.transporter = nodemailer.createTransport({
-			host: process.env.SMTP_HOST,
-			port: process.env.SMTP_PORT,
+			host: dotenvInit.parsed.SMTP_HOST,
+			port: dotenvInit.parsed.SMTP_PORT,
 			secure: true,
 			auth: {
-				user: process.env.SMTP_USER,
-				pass: process.env.SMTP_PASSWORD,
+				user: dotenvInit.parsed.SMTP_USER,
+				pass: dotenvInit.parsed.SMTP_PASSWORD,
 			},
 		});
 	}
 
 	async sendActivationMail(email, link) {
 		await this.transporter.sendMail({
-			from: 'gogahahafunny@yandex.ru',
+			from: dotenvInit.parsed.SMTP_USER,
 			to: email,
 			subject: 'Активация аккаунта gogulingo',
 			text: '',
