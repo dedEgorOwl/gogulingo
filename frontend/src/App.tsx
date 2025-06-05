@@ -1,59 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Footer from './components/Footer/Footer';
-import Login from './components/Login/Login';
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
+import Login from "./components/Login/Login";
 
-import { useActions } from './hooks/useActions';
-import { useTypedSelector } from './hooks/useTypedSelector';
-import { useDispatch } from 'react-redux';
-import { СheckAuthUser } from './store/action-creator/currentUser';
-import Tasks from './components/Tasks/Tasks';
+import { useActions } from "./hooks/useActions";
+import { useTypedSelector } from "./hooks/useTypedSelector";
+import { useDispatch } from "react-redux";
+import { СheckAuthUser } from "./store/action-creator/currentUser";
+import Tasks from "./components/Tasks/Tasks";
 
 const App: React.FC = () => {
-	const dispatch = useDispatch();
+    // поменять фейсбук на вконтакте
 
-	const { ChangeScroll } = useActions();
-	const isLoginActive = useTypedSelector((state) => state.modals.login);
+    const dispatch = useDispatch();
 
-	const currentUser = useTypedSelector((state) => state.currentUser);
+    const { ChangeScroll } = useActions();
+    const isLoginActive = useTypedSelector((state) => state.modals.login);
 
-	const [currentLoginType, setCurrentLoginType] = useState('');
+    const currentUser = useTypedSelector((state) => state.currentUser);
 
-	const handleScroll = () => {
-		const position: number = window.scrollY;
-		ChangeScroll(position);
-	};
+    const [currentLoginType, setCurrentLoginType] = useState("");
 
-	useEffect(() => {
-		if (localStorage.getItem('token')) {
-			dispatch(СheckAuthUser());
-		}
+    const handleScroll = () => {
+        const position: number = window.scrollY;
+        ChangeScroll(position);
+    };
 
-		window.addEventListener('scroll', handleScroll, { passive: true });
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            dispatch(СheckAuthUser());
+        }
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
-	return (
-		<>
-			{!currentUser.username ? (
-				<div style={{ overflowY: isLoginActive ? 'hidden' : 'visible', height: isLoginActive ? '100vh' : 'fit-content' }}>
-					<Header />
-					<Home setCurrentLoginType={setCurrentLoginType} />
-					<About />
-					<Footer />
-					{isLoginActive ? <Login setCurrentLoginType={setCurrentLoginType} currentLoginType={currentLoginType} /> : ''}
-				</div>
-			) : (
-				<Tasks />
-			)}
-		</>
-	);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    return (
+        <>
+            {!currentUser.username ? (
+                <div style={{ overflowY: isLoginActive ? "hidden" : "visible", height: isLoginActive ? "100vh" : "fit-content" }}>
+                    <Header />
+                    <Home setCurrentLoginType={setCurrentLoginType} />
+                    <About />
+                    <Footer />
+                    {isLoginActive ? <Login setCurrentLoginType={setCurrentLoginType} currentLoginType={currentLoginType} /> : ""}
+                </div>
+            ) : (
+                <Tasks />
+            )}
+        </>
+    );
 };
 
 export default App;
